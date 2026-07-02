@@ -28,11 +28,16 @@ def calcula_area_circulo(raio: float) -> float:
     return math.pi * raio * raio
 
 
+def calcula_area_triangulo(base: float, altura: float) -> float:
+    return (base * altura) / 2
+
+
 def main():
     print("Escolha uma opção:")
     print("1 - Calcular a área de um quadrado")
     print("2 - Calcular a área de um retângulo")
     print("3 - Calcular a área de um círculo")
+    print("4 - Calcular a área de um triângulo")
 
     while True:
         escolha = input("Opção: ").strip()
@@ -56,7 +61,14 @@ def main():
             print(f"Área do círculo: {area}")
             break
 
-        print("Opção inválida. Escolha 1, 2 ou 3.")
+        if escolha == "4":
+            base = ler_numero("Insira a base do triângulo: ")
+            altura = ler_numero("Insira a altura do triângulo: ")
+            area = calcula_area_triangulo(base, altura)
+            print(f"Área do triângulo: {area}")
+            break
+
+        print("Opção inválida. Escolha 1, 2, 3 ou 4.")
 
 
 if __name__ == "__main__":
